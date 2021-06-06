@@ -1,0 +1,106 @@
+.card-container {
+    border-radius: var(--b-radius);
+    margin: 1rem 0;
+    position: relative;
+}
+
+.link-line {
+    border: 1px solid var(--dark);
+    height: 100%;
+    position: absolute;
+    top: 0;
+    bottom:0;
+    margin-left: 1rem;
+}
+
+.objctive-card {
+    background-color: var(--light);
+    color: var(--objective-card);
+    padding: 0.5rem 2rem;
+}
+
+.objective-title {
+    border-bottom: 2px solid grey;
+}
+
+.key-result-card {
+    background-color: var(--key-result-color);
+    color: var(--light);
+    padding: 0.375rem 1rem;
+}
+
+.title-holder {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.icon-arrow {
+    margin-right: 0.5rem;
+}
+
+.title-text {
+    display: flex;
+    align-items: center;
+}
+.title-tag {
+    border-radius: 2rem;
+    padding: 0.4rem;
+    background-color: var(--tag-color) !important;
+    margin-right: 1rem;
+    font-size: 0.6rem;
+    color: white;
+    z-index: 1;
+}
+
+@media only screen and (max-width: 600px){
+    h4 {
+        margin: 0.6rem;
+    }
+    .objctive-card {
+        padding: 0.2rem 0.6rem;
+    }
+
+    .icon-arrow {
+        margin-right: 0.2rem;
+    }
+    .key-result-card {
+        padding: 0.2rem 0.6rem;
+    }
+    .title-tag {
+        margin-right: 0.4rem;
+    }
+}
+
+
+
+
+.shimmerBG {
+    animation-duration: 2.2s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-name: shimmer;
+    animation-timing-function: linear;
+    background: #ddd;
+    background: linear-gradient(to right, #F6F6F6 8%, #F0F0F0 18%, #F6F6F6 33%);
+    background-size: 1200px 100%;
+}
+
+
+@-webkit-keyframes shimmer {
+    0% {
+        background-position: -100% 0;
+    }
+    100% {
+        background-position: 100% 0;
+    }
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: -1200px 0;
+    }
+    100% {
+        background-position: 1200px 0;
+    }
+}
+  

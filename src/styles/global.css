@@ -1,0 +1,16 @@
+:root {
+    --dark: #1b1c1d;
+    --light: #ffffff; 
+    --bg-header :#eee;
+    --objective-card: #272832;
+    --key-result-color: #6e6d7a;
+    --content-holder: #4f3cc9;
+    --tag-color: #ff253a;
+    --b-radius: 0.375rem;
+  }
+  
+  .wrapper {
+    height: 100%;
+    background-color: var(--dark);
+    padding: 1rem;
+  }

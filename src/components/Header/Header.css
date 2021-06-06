@@ -1,0 +1,9 @@
+.header-container {
+    height: 4rem;
+    display: flex;
+    background-color: var(--bg-header);
+    border-radius: var(--b-radius);
+    align-items: center;
+    padding: 0 2rem;
+    justify-content: center;
+}

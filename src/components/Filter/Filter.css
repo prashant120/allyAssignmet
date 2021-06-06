@@ -1,0 +1,22 @@
+.filter-container {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+
+.filter-tag {
+    margin: 0.4rem;
+    padding: 0.6rem;
+    color: black;
+    background: white;
+    border-radius: 9rem;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.filter-applied {
+    background-color: var(--tag-color);
+    color: white;
+}
