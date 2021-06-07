@@ -15,7 +15,8 @@ export const FILTER_OPTIONS = [
 
 export const STATUS = {
     LOADING: "Loading ....", 
-    NO_KEY_RESULTS: "No Key Results to show"
+    NO_KEY_RESULTS: "No Key Results to show",
+    NO_OBJECTIVES: "No OKR's to Show"
 }
 
 export const FILTER_TITLE = "Filter by Catogery(Click on Catogery tag to apply filter)";

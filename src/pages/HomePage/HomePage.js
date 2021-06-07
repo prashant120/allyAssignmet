@@ -3,9 +3,11 @@ import { Fragment, useEffect, useState } from "react";
 import OKRServices from "../../utils/services/OKRService";
 import ObjectiveList from "../../components/ObjectiveList/ObjectiveList";
 import Filter from "../../components/Filter/Filter";
+import ErrorScreen from "../../components/ErrorScreen/ErrorScreen";
 import { FILTER_OPTIONS, FILTER_TITLE, STATUS } from "../../utils/constant";
-
+import { faTasks } from '@fortawesome/free-solid-svg-icons';
 import { dataModeller } from "../../utils/Helpers";
+
 function HomePage() {
     const [okrList, setOkrList] = useState([]);
     const [filteredOkrList, setFilteredOkrList] = useState([]);
@@ -66,9 +68,9 @@ function HomePage() {
                     <Fragment>
                         <Filter title={FILTER_TITLE} filterList={filteOptions} applyFilter={applyFilter} />
                         {
-                            filteredOkrList.map((objective, index) => {
+                            filteredOkrList.length ? filteredOkrList.map((objective, index) => {
                                 return <ObjectiveList className="objective-list" index={index + 1} key={objective.id} objective={objective} />
-                            })
+                            }): <ErrorScreen icon={faTasks} status={STATUS.NO_OBJECTIVES}/>
                         }
                     </Fragment>
             }

@@ -2,8 +2,8 @@ import { useState } from "react";
 import './ObjectiveList.css';
 import Card from "../Card/Card";
 import { STATUS } from "../../utils/constant";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleDown, faAngleUp, faTasks } from '@fortawesome/free-solid-svg-icons';
+import ErrorScreen from "../ErrorScreen/ErrorScreen";
 
 function ObjectiveList({ objective: { title, keyResult }, index }) {
     const [showKeyResult, setShowKeyResult] = useState(true);
@@ -37,10 +37,7 @@ function ObjectiveList({ objective: { title, keyResult }, index }) {
                     return <div className="key-result-list" key={id}>
                         <Card customClass="key-result-card" title={title} />
                     </div>;
-                }) : <div className="no-key-results">
-                        <FontAwesomeIcon className="no-res-icon" icon={faTasks}/>
-                        {STATUS.NO_KEY_RESULTS}
-                    </div>)
+                }) : <ErrorScreen icon={faTasks} status={STATUS.NO_KEY_RESULTS}/>)
             }
         </Card>
     );
