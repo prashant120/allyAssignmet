@@ -1,4 +1,5 @@
 import './Filter.css';
+import PropTypes from 'prop-types';
 
 function Filter({filterList, title, applyFilter}) {
     return (
@@ -16,5 +17,11 @@ function Filter({filterList, title, applyFilter}) {
         </div>
         
     )
+}
+
+Filter.propTypes = {
+    filterList: PropTypes.array.isRequired, 
+    title: PropTypes.string.isRequired, 
+    applyFilter: PropTypes.func.isRequired
 }
 export default Filter;

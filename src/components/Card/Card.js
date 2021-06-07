@@ -1,4 +1,5 @@
 import './Card.css';
+import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 
@@ -17,5 +18,15 @@ function Card({ handleClick, title, customClass, OkrTile, arrowIcon, OkrTag, chi
         </div>
     );
 }
+
+Card.propTypes = {
+    handleClick: PropTypes.func,
+    title: PropTypes.string.isRequired, 
+    customClass: PropTypes.string, 
+    OkrTile: PropTypes.string, 
+    arrowIcon: PropTypes.object, 
+    OkrTag: PropTypes.string, 
+    children: PropTypes.array || PropTypes.object
+};
 
 export default Card;

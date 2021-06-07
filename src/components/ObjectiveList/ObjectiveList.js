@@ -4,6 +4,7 @@ import Card from "../Card/Card";
 import { STATUS } from "../../utils/constant";
 import { faAngleDown, faAngleUp, faTasks } from '@fortawesome/free-solid-svg-icons';
 import ErrorScreen from "../ErrorScreen/ErrorScreen";
+import PropTypes from 'prop-types';
 
 function ObjectiveList({ objective: { title, keyResult }, index }) {
     const [showKeyResult, setShowKeyResult] = useState(true);
@@ -31,16 +32,24 @@ function ObjectiveList({ objective: { title, keyResult }, index }) {
     }
     
     return (
-        <Card customClass="objctive-card " OkrTag="OKR" OkrTile={okrTitleClass} arrowIcon={arrowIcon} title={`${index}. ${title}`} handleClick={handleClick}>
-            {
-                showKeyResult && (keyResult.length ? keyResult.map(({ id, title }) => {
-                    return <div className="key-result-list" key={id}>
-                        <Card customClass="key-result-card" title={title} />
-                    </div>;
-                }) : <ErrorScreen icon={faTasks} status={STATUS.NO_KEY_RESULTS}/>)
-            }
-        </Card>
+        <div>
+            <Card customClass="objctive-card " OkrTag="OKR" OkrTile={okrTitleClass} arrowIcon={arrowIcon} title={`${index}. ${title}`} handleClick={handleClick}>
+                {
+                    showKeyResult && (keyResult.length ? keyResult.map(({ id, title }) => {
+                        return <div className="key-result-list" key={id}>
+                            <Card customClass="key-result-card" title={title} />
+                        </div>;
+                    }) : <ErrorScreen icon={faTasks} status={STATUS.NO_KEY_RESULTS}/>)
+                }
+            </Card>
+        </div>
+        
     );
+}
+
+ObjectiveList.propTypes = {
+    objective: PropTypes.object,
+    index: PropTypes.number
 }
 
 export default ObjectiveList;

@@ -12,6 +12,7 @@ function HomePage() {
     const [okrList, setOkrList] = useState([]);
     const [filteredOkrList, setFilteredOkrList] = useState([]);
     const [isLoading, setLoading] = useState(true);
+    const [appCrash, setAppCrash] = useState(false);
     const [filteOptions, setFilterOptions] = useState(FILTER_OPTIONS);
 
     /**
@@ -54,7 +55,9 @@ function HomePage() {
                 setFilteredOkrList(list);
             })();
         } catch (e) {
+            debugger;
             console.log("error", e);
+            setAppCrash(true);
         } finally {
             setLoading(false);
         }
@@ -62,7 +65,8 @@ function HomePage() {
     }, []);
 
     return (
-        <div className="home-page-container">
+
+        appCrash ? <ErrorScreen icon={faTasks} status={STATUS.SOMETHING_WENT_WRONG}/>: <div className="home-page-container">
             {
                 isLoading ? <div className="loader">{STATUS.LOADING}</div> :
                     <Fragment>

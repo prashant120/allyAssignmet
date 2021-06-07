@@ -1,4 +1,5 @@
 import './ErrorScreen.css';
+import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 function ErrorScreen({icon, status}) {
@@ -9,5 +10,10 @@ function ErrorScreen({icon, status}) {
         </div>
     );
 }
+
+ErrorScreen.propTypes = {
+    icon: PropTypes.object.isRequired,
+    status: PropTypes.string.isRequired
+};
 
 export default ErrorScreen;
